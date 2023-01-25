@@ -1,16 +1,15 @@
-DESCRIPTION
-       The atoi() function converts the initial portion of the string pointed to by nptr to int.  The behavior is the
-       same as
-
-           strtol(nptr, NULL, 10);
-
-       except that atoi() does not detect errors.
-
-       The atol() and atoll() functions behave the same as atoi(), except that they convert the  initial  portion  of
-       the string to their return type of long or long long.
-
-RETURN VALUE
-       The converted value or 0 on error.
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/25 15:34:14 by abuonomo          #+#    #+#             */
+/*   Updated: 2023/01/25 15:34:14 by abuonomo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include "libft.h"
 
 int atoi(const char *nptr)
 {
