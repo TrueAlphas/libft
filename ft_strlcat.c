@@ -8,9 +8,9 @@ size_t strlcat(char *dst, const char *src, size_t size){
 
 	i = 0;
 	j = 0;
-	ldest = ft_strlen(dest);
+	ldest = ft_strlen(dst);
 	lsrc = ft_strlen(src);
-	while (dest[i] != '\0' )
+	while (dst[i] != '\0' )
 	{
 		i++;
 	}
@@ -20,10 +20,10 @@ size_t strlcat(char *dst, const char *src, size_t size){
 	}
 	while (src[j] != '\0' && j < size - ldest - 1)
 	{
-		dest[i] = src[j];
+		dst[i] = src[j];
 		i++;
 		j++;
 	}
-	dest[i] = '\0';
+	dst[i] = '\0';
 	return (ldest + lsrc);
 }

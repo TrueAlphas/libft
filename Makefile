@@ -6,7 +6,7 @@
 #    By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/25 15:36:03 by abuonomo          #+#    #+#              #
-#    Updated: 2023/01/25 15:51:19 by abuonomo         ###   ########.fr        #
+#    Updated: 2023/01/25 17:17:50 by abuonomo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,3 @@ fclean: clean
 		${RM} ${NAME}
 
 re: fclean all
-
-$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)

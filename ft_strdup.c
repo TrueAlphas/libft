@@ -13,6 +13,6 @@ char *strdup(const char *s)
         ptr[i] = s[i];
         i++;
     }
-    ptr[i] = '/0';
+    ptr[i] = '\0';
     return (ptr);
 }

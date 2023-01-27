@@ -18,8 +18,6 @@ int atoi(const char *nptr)
 	int	res;
 
     is_neg = 1;
-	if (!nptr)
-		return (0);
 	i = 0;
 	while (nptr[i] == '\t' || nptr[i] == '\n' || nptr[i] == '\v' ||
 			nptr[i] == '\f' || nptr[i] == '\r' || nptr[i] == ' ')
