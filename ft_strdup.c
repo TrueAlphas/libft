@@ -6,13 +6,13 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:53:37 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/02/02 11:54:20 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/02/02 14:11:27 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	char	*ptr;
 	size_t	i;

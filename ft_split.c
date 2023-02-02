@@ -6,7 +6,7 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 02:08:55 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/02/02 11:52:15 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/02/02 14:18:38 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,43 +26,52 @@ with a NULL pointer.*/
 
 #include "libft.h"
 
-size_t	ft_count(char const *s, char c)
+static size_t	ft_counter(const char *s, char c)
 {
-	size_t	ret;
+	size_t	count;
 	size_t	i;
 
 	i = 0;
-	ret = 0;
+	count = 0;
+	while (s[i] == c)
+		i++;
 	while (s[i])
 	{
-		if (s[i] == c)
-			ret++;
-		i++;
+		if (s[i] != c)
+		{
+			++count;
+			while (s[i] && s[i] != c)
+				++i;
+		}
+		else
+			i++;
 	}
-	return (ret + 1);
+	return (count + 1);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**matrix;
-	size_t	len;
 	size_t	i;
+	size_t	j;
 
-	matrix = malloc (sizeof(char *) * ft_count (s, c));
+	if (!s)
+		return (0);
 	i = 0;
+	matrix = malloc(sizeof(char *) * (ft_counter(s, c)));
+	if (!matrix)
+		return (0);
 	while (*s)
 	{
-		if (*s == c)
+		if (*s != c)
 		{
-			s++;
-			len = 1;
-			while (*s != c && *s != 0)
-			{
-				s++;
-				len++;
-			}
-			matrix[i++] = ft_substr (s - len, 0, len);
+			j = 0;
+			while (*s && *s != c && ++j)
+				++s;
+			matrix[i++] = ft_substr(s - j, 0, j);
 		}
+		else
+			++s;
 	}
 	matrix[i] = 0;
 	return (matrix);

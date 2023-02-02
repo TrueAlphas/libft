@@ -6,7 +6,7 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 15:17:24 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/02/02 11:39:31 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/02/02 14:20:14 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,57 +19,45 @@ Negative numbers must be handled.
 #include <stdio.h>
 #include "libft.h"
 
-int	ft_count(int n)
+static int	ft_counter(int n)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	if (n < 0)
+	len = 0;
+	if (n <= 0)
+		len = 1;
+	while (n)
 	{
-		i++;
-		n = -n;
+		n /= 10;
+		len++;
 	}
-	while (n != 0)
-	{
-		n = n / 10;
-		i++;
-	}
-	return (i);
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*ret;
-	int		size;
-	char	right;
-	int		i;
+	char		*str;
+	int			len;
+	int			i ;
+	long int	nb;
 
-	size = ft_count(n);
-	ret = (char *)malloc(sizeof(char) * (size + 1));
-	if (!ret)
+	nb = (long int) n;
+	len = ft_counter (nb);
+	i = len - 1;
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
-	if (n < 0)
+	str[len] = '\0';
+	if (nb < 0)
 	{
-		n = -n;
-		ret[size - size] = '-';
+		str[0] = '-';
+		nb *= -1;
 	}
-	i = 1;
-	while (n != 0)
+	while (i >= 0 && str[i] != '-')
 	{
-		right = n % 10;
-		ret[size - i] = right + '0';
-		n = n / 10;
-		i++;
+		str[i] = nb % 10 + 48;
+		nb /= 10;
+		i--;
 	}
-	ret[size] = 0;
-	return (ret);
-}
-
-int	main()
-{
-	int number = 2147483649;
-	char *to_string;
-	to_string = ft_itoa(number);
-	printf("STAMPA? %s",to_string);
-	return (0);
+	return (str);
 }
