@@ -1,7 +1,19 @@
-int ft_isdigit(int argument)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/02 11:34:47 by abuonomo          #+#    #+#             */
+/*   Updated: 2023/02/02 11:34:47 by abuonomo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_isdigit(int argument)
 {
-    if((argument >= 48 && argument <= 57))
-        return argument;
-    else
-        return 0;
+	if ((argument >= 48 && argument <= 57))
+		return (argument);
+	else
+		return (0);
 }

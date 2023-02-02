@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/02 11:56:13 by abuonomo          #+#    #+#             */
+/*   Updated: 2023/02/02 11:56:13 by abuonomo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-size_t strlcat(char *dst, const char *src, size_t size){
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
 	size_t	i;
 	size_t	j;
 	size_t	ldest;
