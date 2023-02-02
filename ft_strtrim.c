@@ -6,7 +6,7 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 01:41:53 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/02/02 12:13:52 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/02/02 12:35:03 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,25 @@ from the beginning and the end of the string.
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	char	*s;
-	size_t	start;
-	size_t	end;
-	size_t	i;
+	int		start;
+	int		end;
 	char	*result;
+	int		i;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = 0;
 	end = ft_strlen(s1) - 1;
 	while (start <= end && ft_strchr(set, s1[start]) != NULL)
-		start++;
-	while (end >= start && ft_strchr(set, s1[start]) != NULL)
+	start++;
+	while (end >= start && ft_strchr(set, s1[end]) != NULL)
 		end--;
-	s = (char *)malloc(end - start + 2);
+	result = (char *) malloc(end - start + 2);
+	if (!result)
+		return (NULL);
+	i = 0;
 	while (start <= end)
 		result[i++] = s1[start++];
 	result[i] = '\0';

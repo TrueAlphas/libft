@@ -14,8 +14,7 @@
 
 int	ft_isprint(int argument)
 {
-	if ((argument >= 32 && argument <= 127))
-		return (argument);
-	else
-		return (0);
+	if ((argument > 31 && argument < 127))
+		return (1);
+	return (0);
 }

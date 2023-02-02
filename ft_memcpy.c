@@ -21,7 +21,7 @@ void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
 	destc = (char *)dest;
 	srcc = (char *)src;
 	i = 0;
-	if (!dest)
+	if (!dest && !src)
 		return (NULL);
 	while (i < n)
 	{
