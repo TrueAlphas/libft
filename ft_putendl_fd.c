@@ -6,7 +6,7 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:19:43 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/02/02 15:22:28 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/02/02 19:50:59 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ followed by a newline.
 */
 void	ft_putendl_fd(char *s, int fd)
 {
-	if(!s)
+	if (!s)
 		return ;
-	write(fd,s,ft_strlen(s));
-	write(fd,"\n",1);
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:37:24 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/02/02 15:44:17 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/02/02 19:49:55 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,12 @@ the value of the parameter ’content’. The variable
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-	t_list *node;
+	t_list	*node;
+
 	node = malloc(sizeof(t_list));
-	if(!node)
+	if (!node)
 		return (NULL);
 	node->content = content;
 	node->next = NULL;

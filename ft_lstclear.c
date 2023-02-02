@@ -6,7 +6,7 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 16:46:04 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/02/02 16:51:12 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/02/02 19:48:41 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ NULL.
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *temp;
+	t_list	*temp;
 
-	if(!lst || !del)
+	if (!lst || !del)
 		return ;
-	while(lst && *lst)
+	while (lst && *lst)
 	{
 		temp = (*lst)->next;
-		ft_lstdelone(*lst,del);
+		ft_lstdelone(*lst, del);
 		*lst = temp;
 	}
 }

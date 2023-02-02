@@ -6,7 +6,7 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 16:42:36 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/02/02 16:45:32 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/02/02 19:48:58 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ as a parameter and free the node. The memory of
 */
 #include "libft.h"
 
-void ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if(!lst || !del)
+	if (!lst || !del)
 		return ;
 	del(lst->content);
-	free(lst);
+	free (lst);
 }

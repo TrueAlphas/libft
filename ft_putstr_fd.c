@@ -6,7 +6,7 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:08:37 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/02/02 15:13:07 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/02/02 19:51:45 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Outputs the string ’s’ to the given file descriptor.
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if(!s)
+	if (!s)
 		return ;
-	write(fd,s,ft_strlen(s));
+	write(fd, s, ft_strlen(s));
 }

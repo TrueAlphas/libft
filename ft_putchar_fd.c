@@ -6,7 +6,7 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:01:28 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/02/02 15:05:39 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/02/02 19:50:41 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ Outputs the character ’c’ to the given file descriptor.
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c , 1);
+	write(fd, &c, 1);
 }
